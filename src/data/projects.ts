@@ -55,12 +55,16 @@ export const projectsData: Project[] = [
     image: '/images/projects/forensic/cover.svg',
     images: [
       '/images/projects/forensic/cover.svg',
-      '/images/projects/forensic/main.jpg',
       '/images/projects/forensic/1.jpg',
       '/images/projects/forensic/2.jpg',
       '/images/projects/forensic/3.jpg',
       '/images/projects/forensic/4.jpg',
-      '/images/projects/forensic/5.jpg'
+      '/images/projects/forensic/5.jpg',
+      '/images/projects/forensic/6.jpg',
+      '/images/projects/forensic/7.jpg',
+      '/images/projects/forensic/8.jpg',
+      '/images/projects/forensic/9.jpg',
+      '/images/projects/forensic/10.jpg'
     ]
   },
   {
@@ -102,11 +106,14 @@ export const projectsData: Project[] = [
     image: '/images/projects/shoot-live/cover.svg',
     images: [
       '/images/projects/shoot-live/cover.svg',
-      '/images/projects/shoot-live/main.jpg',
       '/images/projects/shoot-live/1.jpg',
       '/images/projects/shoot-live/2.jpg',
       '/images/projects/shoot-live/3.jpg',
-      '/images/projects/shoot-live/4.jpg'
+      '/images/projects/shoot-live/4.jpg',
+      '/images/projects/shoot-live/5.jpg',
+      '/images/projects/shoot-live/6.jpg',
+      '/images/projects/shoot-live/7.jpg',
+      '/images/projects/shoot-live/8.jpg'
     ]
   },
   {
@@ -160,9 +167,7 @@ export const projectsData: Project[] = [
     images: [
       '/images/projects/forests-team/cover.svg',
       '/images/projects/forests-team/1.svg',
-      '/images/projects/forests-team/2.svg',
-      '/images/projects/forests-team/1.jpg',
-      '/images/projects/forests-team/2.jpg'
+      '/images/projects/forests-team/2.svg'
     ]
   },
   {
@@ -202,7 +207,9 @@ export const projectsData: Project[] = [
       '/images/projects/mansy-store/1.png',
       '/images/projects/mansy-store/2.png',
       '/images/projects/mansy-store/3.png',
-      '/images/projects/mansy-store/4.png'
+      '/images/projects/mansy-store/4.png',
+      '/images/projects/mansy-store/5.png',
+      '/images/projects/mansy-store/6.png'
     ]
   },
   {
@@ -245,9 +252,7 @@ export const projectsData: Project[] = [
     images: [
       '/images/projects/iti/cover.svg',
       '/images/projects/iti/1.svg',
-      '/images/projects/iti/2.svg',
-      '/images/projects/iti/1.jpg',
-      '/images/projects/iti/2.jpg'
+      '/images/projects/iti/2.svg'
     ]
   }
 ];
