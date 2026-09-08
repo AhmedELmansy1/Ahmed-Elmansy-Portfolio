@@ -5,7 +5,7 @@ import { motion, Variants } from 'framer-motion';
 import { useTranslation } from '@/hooks/useTranslation';
 import { personalInfo } from '@/data/socials';
 import { Button } from '@/components/ui/Button';
-import { ArrowRight, Download, Terminal, Code2, Lock, Cpu, Mail, User, ShieldCheck, Activity } from 'lucide-react';
+import { Shield, ArrowRight, Download, Terminal, Code2, Lock, Cpu, Mail, User, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function HeroSection() {
@@ -14,7 +14,6 @@ export function HeroSection() {
 
   const headline = language === 'ar' ? personalInfo.taglineAr : personalInfo.tagline;
   const shortIdentity = language === 'ar' ? personalInfo.heroShortIdentityAr : personalInfo.heroShortIdentity;
-  const name = language === 'ar' ? personalInfo.nameAr : personalInfo.name;
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -38,7 +37,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-cyber-grid dark:bg-cyber-grid opacity-30 dark:opacity-20 pointer-events-none" />
 
       {/* Radial Glow Gradient */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/15 via-indigo-500/5 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-blue-600/15 via-[#F5C542]/5 to-transparent blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -51,24 +50,24 @@ export function HeroSection() {
             className="lg:col-span-7 flex flex-col items-start text-left rtl:text-right"
           >
             {/* Status Pill Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#0B1020]/90 text-slate-200 border border-slate-800 shadow-md mb-6 backdrop-blur-md">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-[#080B14] text-slate-200 border border-[#3B82F6]/30 shadow-md mb-6 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="font-mono text-emerald-400">{t.hero.availableStatus}</span>
             </motion.div>
 
-            {/* Greeting & Name */}
+            {/* Greeting & Name in Gold x White Hierarchy */}
             <motion.div variants={itemVariants} className="mb-4">
-              <span className="text-sm sm:text-base font-semibold text-cyan-400 font-mono block mb-1">
+              <span className="text-sm sm:text-base font-semibold text-[#3B82F6] font-mono block mb-1">
                 {t.hero.greeting}
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-                {name}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]">
+                <span className="text-[#F5C542]">Ahmed</span> <span className="text-slate-900 dark:text-white">Elmansy</span>
               </h1>
             </motion.div>
 
-            {/* Sub-identity Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500/10 via-indigo-500/10 to-red-500/10 border border-cyan-500/30 text-cyan-400 font-mono text-xs sm:text-sm md:text-base font-bold mb-6">
-              <Terminal className="w-4 h-4 shrink-0 text-cyan-400" />
+            {/* Sub-identity Badge with Gold/Blue Accents */}
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-gradient-to-r from-[#F5C542]/10 via-[#3B82F6]/10 to-[#EF4444]/10 border border-[#F5C542]/30 text-[#F5C542] font-mono text-xs sm:text-sm md:text-base font-bold mb-6">
+              <Terminal className="w-4 h-4 shrink-0 text-[#3B82F6]" />
               <span>{shortIdentity}</span>
             </motion.div>
 
@@ -82,7 +81,7 @@ export function HeroSection() {
               {language === 'ar' ? personalInfo.supportingLineAr : personalInfo.supportingLine}
             </motion.p>
 
-            {/* Action Buttons (Priority: 1. View My Work, 2. Let's Work Together, 3. Download CV) */}
+            {/* Action Buttons (Hierarchy: 1. View My Work, 2. Let's Work Together, 3. Download CV) */}
             <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
               <Button
                 href="#projects"
@@ -98,7 +97,7 @@ export function HeroSection() {
                 href="#contact"
                 variant="secondary"
                 size="lg"
-                icon={<Mail className="w-4 h-4" />}
+                icon={<Mail className="w-4 h-4 text-[#F5C542]" />}
               >
                 {t.hero.cta}
               </Button>
@@ -115,7 +114,7 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Profile & Tech Graphic Column */}
+          {/* Right Profile & Cybersecurity Identity Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -123,43 +122,43 @@ export function HeroSection() {
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
-              {/* Rotating Outer Tech Marker Ring */}
-              <div className="absolute -inset-4 rounded-full border border-dashed border-cyan-500/30 animate-spin-slow pointer-events-none" />
+              {/* Rotating Blue/Gold Outer Marker Ring */}
+              <div className="absolute -inset-4 rounded-full border border-dashed border-[#F5C542]/30 animate-spin-slow pointer-events-none" />
 
-              {/* Ambient Glow Ring */}
-              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-red-600 opacity-60 blur-md animate-pulse" />
+              {/* Gold x Blue Ambient Glow Ring */}
+              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#F5C542] via-[#3B82F6] to-[#EF4444] opacity-60 blur-md animate-pulse" />
 
-              {/* Main Cybersecurity Card Wrapper */}
-              <div className="relative w-full h-full rounded-3xl bg-[#05070D] border border-slate-800 p-2 overflow-hidden shadow-2xl flex flex-col justify-between">
+              {/* Main Card Frame */}
+              <div className="relative w-full h-full rounded-3xl bg-[#05070D] border border-[#D4AF37]/40 p-2 overflow-hidden shadow-2xl flex flex-col justify-between">
 
-                {/* Profile Image or Stylized Developer Avatar */}
+                {/* Profile Image Presentation */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden bg-slate-950 flex flex-col items-center justify-center p-6 text-center group">
                   {!imgError ? (
                     <img
                       src="/images/profile/ahmed.jpg"
-                      alt={name}
+                      alt={personalInfo.name}
                       onError={() => setImgError(true)}
                       className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : null}
 
-                  {/* Laser Scan Line Effect across profile card */}
-                  <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-scan-line opacity-60 pointer-events-none" />
+                  {/* Laser Scan Line Effect */}
+                  <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#F5C542] to-transparent animate-scan-line opacity-70 pointer-events-none" />
 
                   {/* Fallback Developer Profile Visual */}
                   {imgError && (
                     <div className="flex flex-col items-center justify-center space-y-4">
-                      <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-cyan-500 to-indigo-600 p-1 shadow-lg shadow-cyan-500/30">
+                      <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#F5C542] to-[#3B82F6] p-1 shadow-lg shadow-[#F5C542]/30">
                         <div className="w-full h-full bg-[#05070D] rounded-[14px] flex items-center justify-center">
-                          <User className="w-12 h-12 text-slate-200" />
+                          <User className="w-12 h-12 text-[#F5C542]" />
                         </div>
                       </div>
 
                       <div>
                         <h3 className="text-xl font-bold text-white tracking-tight">
-                          {name}
+                          Ahmed Elmansy
                         </h3>
-                        <p className="text-xs font-mono text-slate-400 mt-1">
+                        <p className="text-xs font-mono text-[#F5C542] mt-1">
                           Flutter Developer &amp; Security
                         </p>
                       </div>
@@ -167,22 +166,22 @@ export function HeroSection() {
                       <div className="p-3 rounded-xl bg-slate-950/90 border border-slate-800 text-[11px] font-mono text-slate-400 max-w-xs text-left">
                         <p className="text-emerald-400">$ whoami</p>
                         <p className="text-slate-300">Ahmed Elmansy</p>
-                        <p className="text-cyan-400 mt-1">$ cat stack.txt</p>
-                        <p className="text-slate-300">Flutter, Python, Security, AI</p>
+                        <p className="text-[#3B82F6] mt-1">$ cat stack.txt</p>
+                        <p className="text-[#F5C542]">Flutter, Python, Security, AI</p>
                       </div>
                     </div>
                   )}
 
-                  {/* Floating System Markers on Card Corners */}
-                  <div className="absolute top-3 left-3 p-2 rounded-xl bg-[#05070D]/90 backdrop-blur-md border border-slate-800 text-cyan-400 shadow-lg">
+                  {/* Corner Identity Markers */}
+                  <div className="absolute top-3 left-3 p-2 rounded-xl bg-[#05070D]/90 backdrop-blur-md border border-slate-800 text-[#3B82F6] shadow-lg">
                     <Code2 className="w-4 h-4" />
                   </div>
 
-                  <div className="absolute top-3 right-3 p-2 rounded-xl bg-[#05070D]/90 backdrop-blur-md border border-slate-800 text-red-500 shadow-lg">
+                  <div className="absolute top-3 right-3 p-2 rounded-xl bg-[#05070D]/90 backdrop-blur-md border border-slate-800 text-[#EF4444] shadow-lg">
                     <Lock className="w-4 h-4" />
                   </div>
 
-                  <div className="absolute bottom-3 left-3 p-2 rounded-xl bg-[#05070D]/90 backdrop-blur-md border border-slate-800 text-indigo-400 shadow-lg">
+                  <div className="absolute bottom-3 left-3 p-2 rounded-xl bg-[#05070D]/90 backdrop-blur-md border border-slate-800 text-[#F5C542] shadow-lg">
                     <Cpu className="w-4 h-4" />
                   </div>
 

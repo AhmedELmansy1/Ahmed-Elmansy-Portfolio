@@ -14,7 +14,7 @@
   .dark {
     --background: #05070D;
     --foreground: #F8FAFC;
-    --card: #0B1020;
+    --card: #0A1020;
     --card-foreground: #F8FAFC;
     --border: #1E293B;
   }
@@ -30,12 +30,12 @@
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-300 min-h-screen overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-400;
+    @apply bg-background text-foreground transition-colors duration-300 min-h-screen overflow-x-hidden selection:bg-[#F5C542]/30 selection:text-[#F5C542];
   }
 
   /* Accessible Focus Indicator */
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-    @apply outline-none ring-2 ring-cyan-500 ring-offset-2 ring-offset-background;
+    @apply outline-none ring-2 ring-[#F5C542] ring-offset-2 ring-offset-background;
   }
 }
 
@@ -45,11 +45,11 @@
     top: 0%;
     opacity: 0;
   }
-  10% {
-    opacity: 0.6;
+  15% {
+    opacity: 0.7;
   }
-  90% {
-    opacity: 0.6;
+  85% {
+    opacity: 0.7;
   }
   100% {
     top: 100%;
@@ -76,20 +76,29 @@
 }
 
 .animate-scan-line {
-  animation: scanline 8s linear infinite;
+  animation: scanline 7s linear infinite;
 }
 
 .animate-spin-slow {
-  animation: spinSlow 20s linear infinite;
+  animation: spinSlow 22s linear infinite;
 }
 
 .animate-light-sweep {
   animation: lightSweep 4s ease-in-out infinite;
 }
 
-/* Cyber Card Glow Utility */
-.cyber-card {
-  @apply relative rounded-2xl bg-white dark:bg-[#0B1020]/90 border border-slate-200 dark:border-slate-800/80 hover:border-cyan-500/50 transition-all duration-300 shadow-md hover:shadow-2xl hover:shadow-cyan-500/10 backdrop-blur-md overflow-hidden;
+/* Gold x Blue Metallic Text Gradient */
+.text-gold-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#F5C542] via-[#F8FAFC] to-[#3B82F6];
+}
+
+.text-blue-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#93C5FD];
+}
+
+/* Depth Cyber Card Utility */
+.depth-card {
+  @apply relative rounded-2xl bg-white dark:bg-[#0A1020] border border-slate-200 dark:border-[#1E293B] hover:border-[#3B82F6]/50 transition-all duration-300 shadow-md hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden;
 }
 
 /* Custom Scrollbar */
@@ -107,7 +116,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #06B6D4;
+  background: #F5C542;
 }
 
 /* RTL Text Alignment Tweaks */

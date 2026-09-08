@@ -5,28 +5,28 @@ import React from 'react';
 export function AnimatedBackground() {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden select-none">
-      {/* Dark Base Gradient */}
+      {/* Deep Navy / Almost Black Base */}
       <div className="absolute inset-0 bg-[#05070D] dark:bg-[#05070D]" />
 
-      {/* Cyber Grid Lines */}
+      {/* Cyber Technical Grid Lines */}
       <div
-        className="absolute inset-0 opacity-[0.15] dark:opacity-[0.12]"
+        className="absolute inset-0 opacity-[0.14] dark:opacity-[0.12]"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(6, 182, 212, 0.15) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(6, 182, 212, 0.15) 1px, transparent 1px)
+            linear-gradient(to right, rgba(59, 130, 246, 0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(59, 130, 246, 0.15) 1px, transparent 1px)
           `,
           backgroundSize: '50px 50px',
         }}
       />
 
-      {/* Radial Glow Lights */}
-      <div className="absolute top-0 left-1/4 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/10 via-indigo-500/5 to-transparent blur-3xl rounded-full" />
-      <div className="absolute bottom-10 right-1/4 translate-x-1/2 w-[700px] h-[700px] bg-gradient-radial from-violet-600/10 via-blue-600/5 to-transparent blur-3xl rounded-full" />
-      <div className="absolute top-1/2 right-10 w-[450px] h-[450px] bg-gradient-radial from-red-600/5 via-amber-500/3 to-transparent blur-3xl rounded-full" />
+      {/* Radial Glow Lights (60% Navy, 25% Blue, 10% Gold, 5% Red) */}
+      <div className="absolute top-0 left-1/4 -translate-x-1/2 w-[650px] h-[650px] bg-gradient-radial from-blue-600/12 via-blue-500/4 to-transparent blur-3xl rounded-full" />
+      <div className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-gradient-radial from-[#F5C542]/8 via-amber-500/2 to-transparent blur-3xl rounded-full" />
+      <div className="absolute bottom-10 left-1/3 w-[550px] h-[550px] bg-gradient-radial from-red-600/6 via-red-500/2 to-transparent blur-3xl rounded-full" />
 
-      {/* Slow Scanning Laser Line */}
-      <div className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent animate-scan-line opacity-40" />
+      {/* Slow Laser Scanning Beam */}
+      <div className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#3B82F6]/40 to-transparent animate-scan-line opacity-50" />
     </div>
   );
 }
