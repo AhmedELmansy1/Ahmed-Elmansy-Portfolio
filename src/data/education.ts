@@ -8,8 +8,10 @@ export const educationData: Education = {
   universityAr: 'جامعة بنها',
   specialization: 'Information Security and Digital Forensics',
   specializationAr: 'أمن المعلومات والأدلة الجنائية الرقمية',
-  grade: 'Excellent',
-  gradeAr: 'ممتاز',
+  grade: 'Very Good',
+  gradeAr: 'جيد جداً',
   project: 'AI-Powered Digital Forensics System',
-  projectAr: 'نظام الأدلة الجنائية الرقمية المدعوم بالذكاء الاصطناعي'
+  projectAr: 'نظام الأدلة الجنائية الرقمية المدعوم بالذكاء الاصطناعي',
+  projectGrade: 'Excellent',
+  projectGradeAr: 'امتياز'
 };

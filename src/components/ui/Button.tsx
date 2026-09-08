@@ -30,9 +30,9 @@ export function Button({
   const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] select-none cursor-pointer';
 
   const variants = {
-    primary: 'bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 text-white shadow-lg shadow-red-500/25 border border-red-400/30 focus:ring-red-500',
-    secondary: 'bg-slate-800/80 hover:bg-slate-800 text-slate-100 hover:text-white border border-slate-700/60 shadow-md focus:ring-slate-500 dark:bg-slate-800/90 dark:hover:bg-slate-700',
-    outline: 'bg-transparent text-slate-800 dark:text-slate-200 border-2 border-slate-300 dark:border-slate-700 hover:border-red-500 dark:hover:border-red-500 hover:text-red-600 dark:hover:text-red-400 focus:ring-red-500',
+    primary: 'bg-gradient-to-r from-cyan-600 via-indigo-600 to-cyan-500 hover:from-cyan-500 hover:to-indigo-600 text-white shadow-lg shadow-cyan-500/20 border border-cyan-400/30 focus:ring-cyan-500',
+    secondary: 'bg-slate-900/90 hover:bg-slate-800 text-slate-100 hover:text-white border border-slate-700/80 shadow-md focus:ring-slate-500',
+    outline: 'bg-transparent text-slate-800 dark:text-slate-200 border-2 border-slate-300 dark:border-slate-800 hover:border-cyan-500 dark:hover:border-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400 focus:ring-cyan-500',
     ghost: 'bg-transparent text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white focus:ring-slate-400',
     danger: 'bg-red-600 hover:bg-red-700 text-white focus:ring-red-500',
   };

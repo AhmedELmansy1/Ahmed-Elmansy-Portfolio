@@ -13,10 +13,14 @@ import { PricingSection } from '@/components/sections/PricingSection';
 import { GithubSection } from '@/components/sections/GithubSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { Footer } from '@/components/layout/Footer';
+import { SplashScreen } from '@/components/ui/SplashScreen';
+import { AnimatedBackground } from '@/components/ui/AnimatedBackground';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
+    <main className="min-h-screen bg-background text-foreground transition-colors duration-300 relative">
+      <SplashScreen />
+      <AnimatedBackground />
       <Navbar />
       <HeroSection />
       <AboutSection />

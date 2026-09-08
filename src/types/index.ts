@@ -69,6 +69,8 @@ export interface Education {
   gradeAr: string;
   project: string;
   projectAr: string;
+  projectGrade: string;
+  projectGradeAr: string;
 }
 
 export interface ExperienceItem {

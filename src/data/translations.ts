@@ -30,7 +30,7 @@ export const translations = {
       p1: 'I’m Ahmed Elmansy, a Flutter Developer with an academic background in Information Security and Digital Forensics.',
       p2: 'I build modern applications using Flutter and Dart, while exploring AI-powered solutions and security-focused technologies.',
       p3: 'My work combines application development, artificial intelligence, cybersecurity, and digital forensics to deliver reliable, secure, and user-centric software.',
-      graduation: 'Graduated with Excellent Grade from Benha University - Faculty of Computer Science & Information.',
+      graduation: 'Graduated with Very Good grade from Benha University - Faculty of Computer Science & Information (Graduation Project: Excellent).',
       highlights: [
         'Specialized in Information Security & Digital Forensics',
         'Expertise in Flutter & Desktop Software Architecture',
@@ -71,10 +71,12 @@ export const translations = {
       degree: "Bachelor's Degree in Computer Science and Information",
       university: 'Benha University',
       specialization: 'Information Security and Digital Forensics',
-      gradeLabel: 'Graduation Grade',
-      gradeValue: 'Excellent (امتياز)',
+      gradeLabel: 'Degree Grade',
+      gradeValue: 'Very Good (جيد جداً)',
       projectLabel: 'Graduation Project',
       projectValue: 'AI-Powered Digital Forensics System',
+      projectGradeLabel: 'Project Grade',
+      projectGradeValue: 'Excellent (امتياز)',
     },
     certifications: {
       sectionTitle: 'Certifications',
@@ -123,6 +125,8 @@ export const translations = {
       themeLight: 'Light Mode',
       langEn: 'English',
       langAr: 'العربية',
+      soundOn: 'Sound On',
+      soundOff: 'Sound Muted',
     }
   },
   ar: {
@@ -156,7 +160,7 @@ export const translations = {
       p1: 'أنا أحمد المنسي، مطور تطبيقات فلاتر مع خلفية أكاديمية متخصصة في أمن المعلومات والأدلة الجنائية الرقمية.',
       p2: 'أقوم ببناء تطبيقات حديثة باستخدام فلاتر ودارت، مع استكشاف وتطوير حلول برمجة قائمة على الذكاء الاصطناعي وتقنيات الحماية.',
       p3: 'يمزج عملي بين تطوير التطبيقات، الذكاء الاصطناعي، الأمن السيبراني، والتحقيق الرقمي لتقديم حلول برمجية موثوقة وآمنة وعالية الكفاءة.',
-      graduation: 'خريج حاسبات ومعلومات جامعة بنها بتقدير عام ممتاز.',
+      graduation: 'خريج حاسبات ومعلومات جامعة بنها بتقدير عام جيد جداً (مشروع التخرج: ممتاز).',
       highlights: [
         'تخصص في أمن المعلومات والأدلة الجنائية الرقمية',
         'خبرة في بناء معمارية تطبيقات فلاتر وسطح المكتب',
@@ -197,10 +201,12 @@ export const translations = {
       degree: 'بكالوريوس الحاسبات والمعلومات',
       university: 'جامعة بنها',
       specialization: 'أمن المعلومات والأدلة الجنائية الرقمية',
-      gradeLabel: 'تقدير التخرج',
-      gradeValue: 'ممتاز',
+      gradeLabel: 'تقدير التخرج العام',
+      gradeValue: 'جيد جداً',
       projectLabel: 'مشروع التخرج',
       projectValue: 'نظام الأدلة الجنائية الرقمية المدعوم بالذكاء الاصطناعي',
+      projectGradeLabel: 'تقدير مشروع التخرج',
+      projectGradeValue: 'ممتاز',
     },
     certifications: {
       sectionTitle: 'الشهادات المعتمدة',
@@ -249,6 +255,8 @@ export const translations = {
       themeLight: 'الوضع المضيء',
       langEn: 'English',
       langAr: 'العربية',
+      soundOn: 'الصوت مفعل',
+      soundOff: 'الصوت مكتوم',
     }
   }
 };

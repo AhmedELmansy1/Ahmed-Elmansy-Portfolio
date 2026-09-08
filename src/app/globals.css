@@ -12,9 +12,9 @@
   }
 
   .dark {
-    --background: #0B0F19;
+    --background: #05070D;
     --foreground: #F8FAFC;
-    --card: #111827;
+    --card: #0B1020;
     --card-foreground: #F8FAFC;
     --border: #1E293B;
   }
@@ -30,13 +30,35 @@
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-300 min-h-screen overflow-x-hidden selection:bg-red-500/30 selection:text-red-500;
+    @apply bg-background text-foreground transition-colors duration-300 min-h-screen overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-400;
   }
 
   /* Accessible Focus Indicator */
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-    @apply outline-none ring-2 ring-red-500 ring-offset-2 ring-offset-background;
+    @apply outline-none ring-2 ring-cyan-500 ring-offset-2 ring-offset-background;
   }
+}
+
+/* Scan Line Animation */
+@keyframes scanline {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-scan-line {
+  animation: scanline 8s linear infinite;
 }
 
 /* Custom Scrollbar */
@@ -45,16 +67,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B0F19;
+  background: #05070D;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #1E293B;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #EF4444;
+  background: #06B6D4;
 }
 
 /* RTL Text Alignment Tweaks */
