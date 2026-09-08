@@ -1,19 +1,20 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Project } from '@/types';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Badge } from '@/components/ui/Badge';
-import { Shield, Smartphone, Monitor, Cpu, ExternalLink, Github, Info, ChevronRight, Sparkles } from 'lucide-react';
+import { Shield, Smartphone, Monitor, Github, Info, ChevronRight, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ProjectCardProps {
   project: Project;
-  onSelect: (project: Project) => void;
+  onSelect?: (project: Project) => void;
 }
 
-export function ProjectCard({ project, onSelect }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   const { language, t, isRtl } = useTranslation();
   const [imageError, setImageError] = useState(false);
 
@@ -51,7 +52,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
       )}
 
       {/* Project Image Banner / Dynamic Placeholder */}
-      <div className="relative w-full h-48 sm:h-52 bg-slate-950 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+      <Link href={`/projects/${project.id}`} className="relative w-full h-48 sm:h-52 bg-slate-950 overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
         {!imageError ? (
           <img
             src={project.image}
@@ -94,7 +95,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
 
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-slate-900 via-transparent to-transparent opacity-80" />
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-6">
@@ -105,9 +106,11 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors mb-2">
-          {title}
-        </h3>
+        <Link href={`/projects/${project.id}`}>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors mb-2">
+            {title}
+          </h3>
+        </Link>
 
         {/* Description */}
         <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 mb-4 leading-relaxed flex-1">
@@ -140,13 +143,13 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
 
         {/* Footer Actions */}
         <div className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-800/80 mt-auto">
-          <button
-            onClick={() => onSelect(project)}
+          <Link
+            href={`/projects/${project.id}`}
             className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-colors cursor-pointer group/btn"
           >
             <span>{t.projects.viewDetails}</span>
             <ChevronRight className={cn("w-4 h-4 transition-transform group-hover/btn:translate-x-1", isRtl && "rotate-180 group-hover/btn:-translate-x-1")} />
-          </button>
+          </Link>
 
           {project.githubUrl && (
             <a

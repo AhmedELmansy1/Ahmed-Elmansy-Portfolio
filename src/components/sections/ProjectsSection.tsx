@@ -138,7 +138,7 @@ export function ProjectsSection() {
                 {/* Action Button */}
                 <div className="pt-4">
                   <Button
-                    onClick={() => setSelectedProject(featuredProject)}
+                    href={`/projects/${featuredProject.id}`}
                     variant="primary"
                     size="lg"
                     icon={<ArrowRight className={cn("w-4 h-4", isRtl && "rotate-180")} />}

@@ -17,6 +17,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ahmedelmansy.dev'),
   title: 'Ahmed Elmansy | Flutter Developer & Cybersecurity Specialist',
   description: 'Ahmed Elmansy is a Flutter Developer with a background in Cybersecurity, Artificial Intelligence, and Digital Forensics, building modern applications and intelligent digital solutions.',
   keywords: [

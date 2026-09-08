@@ -16,6 +16,7 @@ export interface Project {
     ar: string[];
   };
   image: string;
+  images?: string[];
   githubUrl?: string;
   liveUrl?: string;
   importantNote?: {
