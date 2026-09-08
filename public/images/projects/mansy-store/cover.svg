@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B"/>
+      <stop offset="50%" stop-color="#1C2541"/>
+      <stop offset="100%" stop-color="#0B0F19"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Ambient Glow -->
+  <circle cx="200" cy="180" r="250" fill="#00B4D8" opacity="0.12" filter="blur(70px)"/>
+  <circle cx="1000" cy="420" r="250" fill="#F59E0B" opacity="0.08" filter="blur(70px)"/>
+
+  <!-- Top Status -->
+  <rect x="60" y="50" width="220" height="36" rx="18" fill="rgba(0, 180, 216, 0.15)" stroke="rgba(0, 180, 216, 0.3)" stroke-width="1"/>
+  <circle cx="85" cy="68" r="5" fill="#00B4D8"/>
+  <text x="100" y="73" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#00B4D8" letter-spacing="1">FLUTTER DESKTOP APP</text>
+
+  <!-- Title -->
+  <text x="60" y="145" font-family="system-ui, sans-serif" font-size="44" font-weight="900" fill="#FFFFFF" letter-spacing="-1">Mansy Store • متجر المنسي</text>
+  <text x="60" y="185" font-family="system-ui, sans-serif" font-size="20" font-weight="500" fill="#94A3B8">Flutter Windows Desktop Application &amp; E-Commerce UI</text>
+
+  <!-- Desktop Window Canvas -->
+  <rect x="60" y="230" width="1080" height="340" rx="16" fill="#0B0F19" stroke="rgba(0, 180, 216, 0.4)" stroke-width="1.5"/>
+
+  <!-- Window Header Titlebar -->
+  <rect x="60" y="230" width="1080" height="40" rx="16" fill="#1C2541"/>
+  <circle cx="90" cy="250" r="6" fill="#EF4444"/>
+  <circle cx="110" cy="250" r="6" fill="#F59E0B"/>
+  <circle cx="130" cy="250" r="6" fill="#10B981"/>
+  <text x="500" y="255" font-family="monospace" font-size="12" fill="#94A3B8">Mansy Store Desktop (Windows x64)</text>
+
+  <!-- Sidebar -->
+  <rect x="80" y="285" width="200" height="265" rx="10" fill="#1E293B"/>
+  <text x="100" y="320" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#00B4D8">📦 Products</text>
+  <text x="100" y="360" font-family="system-ui, sans-serif" font-size="14" font-weight="500" fill="#94A3B8">🏷️ Categories</text>
+  <text x="100" y="400" font-family="system-ui, sans-serif" font-size="14" font-weight="500" fill="#94A3B8">🛒 Cart &amp; Orders</text>
+  <text x="100" y="440" font-family="system-ui, sans-serif" font-size="14" font-weight="500" fill="#94A3B8">⚙️ Settings</text>
+
+  <!-- Product Showcase Grid -->
+  <rect x="300" y="285" width="810" height="265" rx="10" fill="#0F172A"/>
+
+  <rect x="320" y="305" width="230" height="225" rx="12" fill="#1E293B"/>
+  <rect x="335" y="320" width="200" height="110" rx="8" fill="#0F172A"/>
+  <text x="335" y="455" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Flutter Desktop Widget</text>
+  <text x="335" y="480" font-family="monospace" font-size="14" font-weight="800" fill="#10B981">$49.99</text>
+
+  <rect x="575" y="305" width="230" height="225" rx="12" fill="#1E293B"/>
+  <rect x="590" y="320" width="200" height="110" rx="8" fill="#0F172A"/>
+  <text x="590" y="455" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Responsive UI Panel</text>
+  <text x="590" y="480" font-family="monospace" font-size="14" font-weight="800" fill="#10B981">$89.99</text>
+
+  <rect x="830" y="305" width="260" height="225" rx="12" fill="#1E293B"/>
+  <rect x="845" y="320" width="230" height="110" rx="8" fill="#0F172A"/>
+  <text x="845" y="455" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Custom Windows Sidebar</text>
+  <text x="845" y="480" font-family="monospace" font-size="14" font-weight="800" fill="#10B981">$129.99</text>
+</svg>

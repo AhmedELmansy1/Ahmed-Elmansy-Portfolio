@@ -52,8 +52,9 @@ export const projectsData: Project[] = [
         'توليد تقارير جنائية تفصيلية'
       ]
     },
-    image: '/images/projects/forensic/main.jpg',
+    image: '/images/projects/forensic/cover.svg',
     images: [
+      '/images/projects/forensic/cover.svg',
       '/images/projects/forensic/main.jpg',
       '/images/projects/forensic/1.jpg',
       '/images/projects/forensic/2.jpg',
@@ -98,8 +99,9 @@ export const projectsData: Project[] = [
       en: 'The application live minute logic was enhanced to dynamically calculate match time using match date, match start time, and match state (First Half, Half Time, Second Half, Finished) replacing static hardcoded timers.',
       ar: 'تم تطوير منطق حساب دقيقة المباراة ليكون ديناميكياً يعتمد على تاريخ ووقت بداية المباراة وحالة شوط المباراة بدلاً من القيم الثابتة.'
     },
-    image: '/images/projects/shoot-live/main.jpg',
+    image: '/images/projects/shoot-live/cover.svg',
     images: [
+      '/images/projects/shoot-live/cover.svg',
       '/images/projects/shoot-live/main.jpg',
       '/images/projects/shoot-live/1.jpg',
       '/images/projects/shoot-live/2.jpg',
@@ -154,8 +156,9 @@ export const projectsData: Project[] = [
       en: 'Presented as a polished frontend & demo application showcasing high-quality Flutter UI design and smooth state management.',
       ar: 'تطبيق استعراضي متميز يبرز دقة التصميم وسلاسة واجهات المستخدم في فلاتر.'
     },
-    image: '/images/projects/forests-team/main.jpg',
+    image: '/images/projects/forests-team/cover.svg',
     images: [
+      '/images/projects/forests-team/cover.svg',
       '/images/projects/forests-team/main.jpg',
       '/images/projects/forests-team/1.jpg',
       '/images/projects/forests-team/2.jpg',
@@ -193,8 +196,9 @@ export const projectsData: Project[] = [
       ]
     },
     githubUrl: 'https://github.com/AhmedELmansy1/mansy-store',
-    image: '/images/projects/mansy-store/main.jpg',
+    image: '/images/projects/mansy-store/cover.svg',
     images: [
+      '/images/projects/mansy-store/cover.svg',
       '/images/projects/mansy-store/main.jpg',
       '/images/projects/mansy-store/1.jpg',
       '/images/projects/mansy-store/2.jpg'
@@ -236,8 +240,9 @@ export const projectsData: Project[] = [
         'معالجة مصادر البيانات الخارجية عبر Dio'
       ]
     },
-    image: '/images/projects/iti/main.jpg',
+    image: '/images/projects/iti/cover.svg',
     images: [
+      '/images/projects/iti/cover.svg',
       '/images/projects/iti/main.jpg',
       '/images/projects/iti/1.jpg',
       '/images/projects/iti/2.jpg',

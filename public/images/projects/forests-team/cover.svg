@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="50%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Ambient Glow -->
+  <circle cx="200" cy="180" r="250" fill="#6366F1" opacity="0.12" filter="blur(70px)"/>
+  <circle cx="1000" cy="420" r="250" fill="#F59E0B" opacity="0.08" filter="blur(70px)"/>
+
+  <!-- Top Status -->
+  <rect x="60" y="50" width="220" height="36" rx="18" fill="rgba(99, 102, 241, 0.15)" stroke="rgba(99, 102, 241, 0.3)" stroke-width="1"/>
+  <circle cx="85" cy="68" r="5" fill="#6366F1"/>
+  <text x="100" y="73" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#818CF8" letter-spacing="1">TEAM &amp; TASK MANAGEMENT</text>
+
+  <!-- Title -->
+  <text x="60" y="145" font-family="system-ui, sans-serif" font-size="44" font-weight="900" fill="#FFFFFF" letter-spacing="-1">Forests Team • فريق فورستس</text>
+  <text x="60" y="185" font-family="system-ui, sans-serif" font-size="20" font-weight="500" fill="#94A3B8">Flutter Material 3 UI/UX • BLoC Architecture • Bilingual RTL</text>
+
+  <!-- App Mockup Canvas -->
+  <rect x="60" y="230" width="1080" height="340" rx="20" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(51, 65, 85, 0.8)" stroke-width="1.5"/>
+
+  <!-- Dashboard Overview Widget -->
+  <rect x="90" y="260" width="480" height="280" rx="16" fill="#0B0F19" stroke="rgba(99, 102, 241, 0.3)" stroke-width="1"/>
+  <text x="120" y="300" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">Team Dashboard</text>
+  <rect x="420" y="280" width="120" height="28" rx="14" fill="rgba(239, 68, 68, 0.2)"/>
+  <text x="440" y="299" font-family="monospace" font-size="11" font-weight="700" fill="#EF4444">🔔 3 Unread</text>
+
+  <!-- Task Progress Cards -->
+  <rect x="120" y="325" width="420" height="55" rx="10" fill="#1E293B"/>
+  <text x="140" y="358" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Task #104: API Architecture Setup</text>
+  <text x="480" y="358" font-family="monospace" font-size="12" fill="#10B981">Completed</text>
+
+  <rect x="120" y="395" width="420" height="55" rx="10" fill="#1E293B"/>
+  <text x="140" y="428" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Task #108: Arabic RTL Support</text>
+  <text x="480" y="428" font-family="monospace" font-size="12" fill="#F59E0B">In Review</text>
+
+  <rect x="120" y="465" width="420" height="55" rx="10" fill="#1E293B"/>
+  <text x="140" y="498" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Task #112: Dark/Light Mode Theme</text>
+  <text x="480" y="498" font-family="monospace" font-size="12" fill="#818CF8">In Progress</text>
+
+  <!-- Features Highlight Right -->
+  <rect x="600" y="260" width="510" height="280" rx="16" fill="#0B0F19" stroke="rgba(245, 158, 11, 0.3)" stroke-width="1"/>
+  <text x="630" y="300" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#F59E0B">Key UI/UX Highlights</text>
+
+  <text x="630" y="340" font-family="system-ui, sans-serif" font-size="14" fill="#E2E8F0">✨ Animated Splash Screen &amp; Smooth Physics</text>
+  <text x="630" y="380" font-family="system-ui, sans-serif" font-size="14" fill="#E2E8F0">📊 Statistics Cards &amp; Recent Activity Ticker</text>
+  <text x="630" y="420" font-family="system-ui, sans-serif" font-size="14" fill="#E2E8F0">🔔 Notifications with Unread Badge Count</text>
+  <text x="630" y="460" font-family="system-ui, sans-serif" font-size="14" fill="#E2E8F0">🌐 Arabic/English RTL &amp; LTR Support</text>
+  <text x="630" y="500" font-family="system-ui, sans-serif" font-size="14" fill="#E2E8F0">🛠️ Modular BLoC &amp; API-Ready Architecture</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051510"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#0B0F19"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(16, 185, 129, 0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Ambient Glow -->
+  <circle cx="200" cy="200" r="250" fill="#10B981" opacity="0.1" filter="blur(70px)"/>
+  <circle cx="1000" cy="400" r="250" fill="#3B82F6" opacity="0.08" filter="blur(70px)"/>
+
+  <!-- Top Status -->
+  <rect x="60" y="50" width="200" height="36" rx="18" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1"/>
+  <circle cx="85" cy="68" r="5" fill="#10B981"/>
+  <text x="100" y="73" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#10B981" letter-spacing="1">LIVE MATCH ENGINE</text>
+
+  <!-- Title -->
+  <text x="60" y="145" font-family="system-ui, sans-serif" font-size="44" font-weight="900" fill="#FFFFFF" letter-spacing="-1">Shoot Live • شوت لايف</text>
+  <text x="60" y="185" font-family="system-ui, sans-serif" font-size="20" font-weight="500" fill="#94A3B8">Flutter Real-Time Score Tracking &amp; Dynamic Match Minute Calculation</text>
+
+  <!-- Live Match Dashboard Card -->
+  <rect x="60" y="230" width="1080" height="340" rx="20" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(51, 65, 85, 0.8)" stroke-width="1.5"/>
+
+  <!-- Scoreboard Box -->
+  <rect x="100" y="270" width="1000" height="150" rx="16" fill="#0B0F19" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1"/>
+
+  <text x="140" y="355" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">Real Madrid</text>
+  <text x="500" y="360" font-family="system-ui, sans-serif" font-size="48" font-weight="900" fill="#10B981">2 - 1</text>
+  <text x="780" y="355" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">FC Barcelona</text>
+
+  <!-- Dynamic Minute Highlight Pill -->
+  <rect x="500" y="290" width="200" height="32" rx="16" fill="rgba(239, 68, 68, 0.2)" stroke="rgba(239, 68, 68, 0.5)" stroke-width="1"/>
+  <circle cx="520" cy="306" r="4" fill="#EF4444"/>
+  <text x="535" y="311" font-family="monospace" font-size="13" font-weight="700" fill="#EF4444">45+2' • FIRST HALF</text>
+
+  <!-- Dynamic Match Calculation Feature Box -->
+  <rect x="100" y="445" width="480" height="95" rx="12" fill="#1E293B"/>
+  <text x="125" y="475" font-family="monospace" font-size="13" font-weight="700" fill="#38BDF8">DYNAMIC MINUTE LOGIC</text>
+  <text x="125" y="500" font-family="system-ui, sans-serif" font-size="12" fill="#94A3B8">Calculates match time using match date, start time &amp; match state</text>
+  <text x="125" y="520" font-family="system-ui, sans-serif" font-size="12" fill="#10B981">Replaced static hardcoded timers with live state engine</text>
+
+  <!-- REST API Real-time Ticker Box -->
+  <rect x="620" y="445" width="480" height="95" rx="12" fill="#1E293B"/>
+  <text x="645" y="475" font-family="monospace" font-size="13" font-weight="700" fill="#F59E0B">REST API &amp; STATE ENGINE</text>
+  <text x="645" y="500" font-family="system-ui, sans-serif" font-size="12" fill="#94A3B8">States: First Half ➔ Half Time ➔ Second Half ➔ Finished</text>
+  <text x="645" y="520" font-family="system-ui, sans-serif" font-size="12" fill="#38BDF8">Optimized Flutter Dart Architecture</text>
+</svg>
