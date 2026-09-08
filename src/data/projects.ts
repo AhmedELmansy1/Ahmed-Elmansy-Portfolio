@@ -159,10 +159,10 @@ export const projectsData: Project[] = [
     image: '/images/projects/forests-team/cover.svg',
     images: [
       '/images/projects/forests-team/cover.svg',
-      '/images/projects/forests-team/main.jpg',
+      '/images/projects/forests-team/1.svg',
+      '/images/projects/forests-team/2.svg',
       '/images/projects/forests-team/1.jpg',
-      '/images/projects/forests-team/2.jpg',
-      '/images/projects/forests-team/3.jpg'
+      '/images/projects/forests-team/2.jpg'
     ]
   },
   {
@@ -199,9 +199,10 @@ export const projectsData: Project[] = [
     image: '/images/projects/mansy-store/cover.svg',
     images: [
       '/images/projects/mansy-store/cover.svg',
-      '/images/projects/mansy-store/main.jpg',
-      '/images/projects/mansy-store/1.jpg',
-      '/images/projects/mansy-store/2.jpg'
+      '/images/projects/mansy-store/1.png',
+      '/images/projects/mansy-store/2.png',
+      '/images/projects/mansy-store/3.png',
+      '/images/projects/mansy-store/4.png'
     ]
   },
   {
@@ -243,10 +244,10 @@ export const projectsData: Project[] = [
     image: '/images/projects/iti/cover.svg',
     images: [
       '/images/projects/iti/cover.svg',
-      '/images/projects/iti/main.jpg',
+      '/images/projects/iti/1.svg',
+      '/images/projects/iti/2.svg',
       '/images/projects/iti/1.jpg',
-      '/images/projects/iti/2.jpg',
-      '/images/projects/iti/3.jpg'
+      '/images/projects/iti/2.jpg'
     ]
   }
 ];

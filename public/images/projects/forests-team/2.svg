@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0B0F19"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+
+  <text x="60" y="50" font-family="system-ui, sans-serif" font-size="22" font-weight="800" fill="#F59E0B">Forests Team • Task Details &amp; Notification Manager</text>
+  <text x="60" y="80" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Task Detail Modal • Unread Badge Clear • BLoC Architecture</text>
+
+  <!-- Left Screen Mockup -->
+  <rect x="180" y="120" width="380" height="630" rx="24" fill="#111827" stroke="#374151" stroke-width="2"/>
+  <text x="210" y="165" font-family="sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">Task Details</text>
+  <rect x="440" y="145" width="90" height="26" rx="13" fill="rgba(16, 185, 129, 0.2)"/>
+  <text x="455" y="162" font-family="sans-serif" font-size="11" font-weight="700" fill="#10B981">In Review</text>
+
+  <text x="210" y="210" font-family="sans-serif" font-size="16" font-weight="700" fill="#818CF8">#104: BLoC API State Handler</text>
+  <text x="210" y="235" font-family="sans-serif" font-size="12" fill="#94A3B8">Assigned to: Ahmed Elmansy</text>
+  <text x="210" y="255" font-family="sans-serif" font-size="12" fill="#94A3B8">Priority: High • Due: Tomorrow</text>
+
+  <rect x="210" y="280" width="320" height="180" rx="12" fill="#1E293B"/>
+  <text x="230" y="310" font-family="sans-serif" font-size="12" fill="#CBD5E1">Task Description:</text>
+  <text x="230" y="335" font-family="sans-serif" font-size="11" fill="#94A3B8">Refactor repository data sources to handle Dio</text>
+  <text x="230" y="355" font-family="sans-serif" font-size="11" fill="#94A3B8">exceptions gracefully with auto-retry and unread</text>
+  <text x="230" y="375" font-family="sans-serif" font-size="11" fill="#94A3B8">notification badge count updates.</text>
+
+  <!-- Mark Read Button -->
+  <rect x="210" y="480" width="320" height="48" rx="12" fill="#6366F1"/>
+  <text x="280" y="510" font-family="sans-serif" font-size="14" font-weight="700" fill="#FFF">Mark Notification Read</text>
+
+  <!-- Right Details Screen -->
+  <rect x="620" y="120" width="480" height="630" rx="20" fill="#111827" stroke="#1F2937" stroke-width="2"/>
+  <text x="650" y="170" font-family="sans-serif" font-size="20" font-weight="800" fill="#FFF">Notifications Center</text>
+
+  <rect x="650" y="200" width="420" height="70" rx="12" fill="#1E293B"/>
+  <circle cx="680" cy="235" r="14" fill="#EF4444"/>
+  <text x="710" y="230" font-family="sans-serif" font-size="13" font-weight="700" fill="#FFF">New Task Assigned</text>
+  <text x="710" y="250" font-family="sans-serif" font-size="11" fill="#94A3B8">You were assigned to Forests Team Demo UI</text>
+
+  <rect x="650" y="285" width="420" height="70" rx="12" fill="#1E293B"/>
+  <circle cx="680" cy="320" r="14" fill="#F59E0B"/>
+  <text x="710" y="315" font-family="sans-serif" font-size="13" font-weight="700" fill="#FFF">Project Milestone Updated</text>
+  <text x="710" y="335" font-family="sans-serif" font-size="11" fill="#94A3B8">Arabic RTL translation merged successfully</text>
+</svg>
