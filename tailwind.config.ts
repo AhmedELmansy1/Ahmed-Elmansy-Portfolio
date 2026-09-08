@@ -24,8 +24,9 @@ const config: Config = {
           "red-hover": "#DC2626",
         },
         navy: {
-          bg: "#05070D",
-          surface: "#080B14",
+          deep: "#030712",
+          midnight: "#050816",
+          surface: "#07111F",
           card: "#0A1020",
           border: "#1E293B",
           muted: "#94A3B8",
@@ -38,7 +39,7 @@ const config: Config = {
         blue: {
           electric: "#2563EB",
           royal: "#3B82F6",
-          cyan: "#60A5FA",
+          light: "#60A5FA",
         },
         red: {
           crimson: "#DC2626",
@@ -50,13 +51,13 @@ const config: Config = {
         arabic: ["var(--font-cairo)", "sans-serif"],
       },
       boxShadow: {
-        'glow-gold': '0 0 25px -5px rgba(245, 197, 66, 0.25)',
-        'glow-blue': '0 0 25px -5px rgba(59, 130, 246, 0.25)',
-        'glow-red': '0 0 25px -5px rgba(239, 68, 68, 0.25)',
+        'glow-gold': '0 0 30px -5px rgba(245, 197, 66, 0.25)',
+        'glow-blue': '0 0 30px -5px rgba(59, 130, 246, 0.25)',
+        'glow-red': '0 0 30px -5px rgba(239, 68, 68, 0.25)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'cyber-grid': 'linear-gradient(to right, rgba(59, 130, 246, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(59, 130, 246, 0.04) 1px, transparent 1px)',
+        'cyber-grid': 'linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px)',
       }
     },
   },

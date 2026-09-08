@@ -40,7 +40,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#05070D] text-white overflow-hidden select-none"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#030712] text-white overflow-hidden select-none"
         >
           {/* Grid Pattern */}
           <div
@@ -67,7 +67,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
               transition={{ duration: 0.4 }}
               className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#F5C542] via-[#3B82F6] to-[#EF4444] p-0.5 shadow-xl shadow-[#F5C542]/20 mb-6"
             >
-              <div className="w-full h-full bg-[#05070D] rounded-[14px] flex items-center justify-center">
+              <div className="w-full h-full bg-[#030712] rounded-[14px] flex items-center justify-center">
                 <Shield className="w-8 h-8 text-[#F5C542]" />
               </div>
             </motion.div>
@@ -97,7 +97,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.6 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#080B14] border border-[#F5C542]/30 text-[#F5C542] font-mono text-xs font-semibold mb-8"
+              className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#07111F] border border-[#F5C542]/30 text-[#F5C542] font-mono text-xs font-semibold mb-8"
             >
               <Terminal className="w-3.5 h-3.5 text-[#3B82F6]" />
               <span>Flutter Developer • Cybersecurity • AI</span>
