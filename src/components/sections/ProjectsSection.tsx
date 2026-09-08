@@ -7,28 +7,39 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { projectsData } from '@/data/projects';
 import { ProjectCard } from '@/components/ui/ProjectCard';
 import { ProjectModal } from '@/components/ui/ProjectModal';
+import { ForensicsDemoWidget } from '@/components/ui/ForensicsDemoWidget';
 import { Project } from '@/types';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { Shield, Sparkles, CheckCircle2, Lock, ArrowRight, Activity, Terminal, Eye } from 'lucide-react';
+import { Shield, Sparkles, CheckCircle2, Lock, ArrowRight, Activity, Terminal, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function ProjectsSection() {
   const { t, language, isRtl } = useTranslation();
   const [filter, setFilter] = useState<'all' | 'flutter' | 'ai' | 'desktop'>('all');
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const featuredProject = projectsData.find((p) => p.id === 'ai-forensics');
 
   const filteredProjects = projectsData.filter((p) => {
-    if (filter === 'all') return true;
-    if (filter === 'flutter') return p.category.includes('Flutter');
-    if (filter === 'ai') return p.category.includes('AI') || p.category.includes('Forensics');
-    if (filter === 'desktop') return p.category.includes('Desktop');
-    return true;
+    const matchesFilter = filter === 'all'
+      ? true
+      : filter === 'flutter'
+      ? p.category.includes('Flutter')
+      : filter === 'ai'
+      ? p.category.includes('AI') || p.category.includes('Forensics')
+      : p.category.includes('Desktop');
+
+    const matchesSearch = searchQuery === ''
+      || p.title.toLowerCase().includes(searchQuery.toLowerCase())
+      || p.titleAr.includes(searchQuery)
+      || p.technologies.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    return matchesFilter && matchesSearch;
   });
 
-  const gridProjects = filter === 'all'
+  const gridProjects = filter === 'all' && searchQuery === ''
     ? projectsData.filter((p) => p.id !== 'ai-forensics')
     : filteredProjects;
 
@@ -57,31 +68,45 @@ export function ProjectsSection() {
           subtitle={t.projects.sectionSubtitle}
         />
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-14">
-          {[
-            { id: 'all', label: t.projects.all },
-            { id: 'flutter', label: t.projects.flutter },
-            { id: 'ai', label: t.projects.ai },
-            { id: 'desktop', label: t.projects.desktop },
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setFilter(tab.id as any)}
-              className={cn(
-                'px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer',
-                filter === tab.id
-                  ? 'bg-gradient-to-r from-[#3B82F6] via-[#2563EB] to-[#F5C542] text-white shadow-xl shadow-blue-500/20 border border-blue-400'
-                  : 'bg-[#0A1020] text-slate-300 border border-slate-800 hover:border-[#3B82F6]/50'
-              )}
-            >
-              {tab.label}
-            </button>
-          ))}
+        {/* Filter Tabs & Tech Search Bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-14">
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {[
+              { id: 'all', label: t.projects.all },
+              { id: 'flutter', label: t.projects.flutter },
+              { id: 'ai', label: t.projects.ai },
+              { id: 'desktop', label: t.projects.desktop },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setFilter(tab.id as any)}
+                className={cn(
+                  'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer',
+                  filter === tab.id
+                    ? 'bg-gradient-to-r from-[#3B82F6] via-[#2563EB] to-[#F5C542] text-white shadow-xl shadow-blue-500/20 border border-blue-400'
+                    : 'bg-[#0A1020] text-slate-300 border border-slate-800 hover:border-[#3B82F6]/50'
+                )}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Real-time Tech Stack Search */}
+          <div className="relative w-full sm:w-64">
+            <Search className="w-4 h-4 text-[#F5C542] absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder={language === 'ar' ? 'بحث بالتقنية (PyTorch, BLoC...)' : 'Search tech (PyTorch, BLoC...)'}
+              className="w-full pl-9 pr-4 py-2 rounded-xl bg-[#0A1020] border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-[#F5C542]"
+            />
+          </div>
         </div>
 
         {/* FEATURED CASE STUDY SHOWCASE (AI-Powered Digital Forensics System) */}
-        {(filter === 'all' || filter === 'ai') && featuredProject && (
+        {(filter === 'all' || filter === 'ai') && searchQuery === '' && featuredProject && (
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 30 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -149,39 +174,9 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              {/* Graphic Feature Terminal Panel */}
-              <div className="lg:col-span-5 flex flex-col justify-center">
-                <div className="p-6 rounded-3xl bg-[#030712] border border-slate-800 space-y-4 font-mono text-xs text-slate-300 shadow-2xl">
-                  <div className="flex items-center justify-between pb-3 border-b border-slate-800 text-slate-400">
-                    <span className="flex items-center gap-2">
-                      <Lock className="w-4 h-4 text-[#EF4444]" />
-                      <span className="text-[#F5C542] font-bold">FORENSIC PIPELINE</span>
-                    </span>
-                    <span className="text-[10px] text-emerald-400 font-bold">ACTIVE ANALYSIS</span>
-                  </div>
-
-                  <div className="space-y-2.5">
-                    <div className="p-3 rounded-xl bg-[#07111F] border border-slate-800 flex items-center justify-between">
-                      <span className="text-slate-300">Image Analysis (ELA)</span>
-                      <span className="text-[#F5C542] font-bold">ResNet-50 / EfficientNet</span>
-                    </div>
-
-                    <div className="p-3 rounded-xl bg-[#07111F] border border-slate-800 flex items-center justify-between">
-                      <span className="text-slate-300">Audio Deepfake</span>
-                      <span className="text-[#3B82F6] font-bold">AASIST / XLS-R</span>
-                    </div>
-
-                    <div className="p-3 rounded-xl bg-[#07111F] border border-slate-800 flex items-center justify-between">
-                      <span className="text-slate-300">Explainable AI</span>
-                      <span className="text-[#EF4444] font-bold">Grad-CAM Heatmaps</span>
-                    </div>
-
-                    <div className="p-3 rounded-xl bg-[#07111F] border border-slate-800 flex items-center justify-between">
-                      <span className="text-slate-300">Evidence Cryptography</span>
-                      <span className="text-emerald-400 font-bold">SHA-256 Hashing</span>
-                    </div>
-                  </div>
-                </div>
+              {/* Graphic Feature Terminal & Simulator Widget Panel */}
+              <div className="lg:col-span-5 flex flex-col justify-center space-y-4">
+                <ForensicsDemoWidget />
               </div>
 
             </div>

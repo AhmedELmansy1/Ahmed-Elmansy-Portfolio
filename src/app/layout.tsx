@@ -53,6 +53,31 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Ahmed Elmansy',
+  jobTitle: 'Flutter Developer & Cybersecurity Specialist',
+  url: 'https://ahmedelmansy.dev',
+  sameAs: [
+    'https://github.com/AhmedELmansy1',
+    'https://www.linkedin.com/in/ahmed-elmansy-a6b494346',
+  ],
+  knowsAbout: [
+    'Flutter',
+    'Dart',
+    'Cybersecurity',
+    'Digital Forensics',
+    'Artificial Intelligence',
+    'PyTorch',
+    'FastAPI',
+  ],
+  alumniOf: {
+    '@type': 'EducationalOrganization',
+    name: 'Benha University',
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -60,7 +85,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`${inter.variable} ${cairo.variable} font-sans antialiased`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className={`${inter.variable} ${cairo.variable} font-sans antialiased bg-[#030712] text-white`}>
         <ThemeProvider>
           <LanguageProvider>
             {children}
