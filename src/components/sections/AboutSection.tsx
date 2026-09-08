@@ -5,31 +5,91 @@ import { motion } from 'framer-motion';
 import { useTranslation } from '@/hooks/useTranslation';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { educationData } from '@/data/education';
-import { ShieldCheck, GraduationCap, Cpu, Lock, CheckCircle2, Award } from 'lucide-react';
+import { ShieldCheck, GraduationCap, Cpu, Lock, CheckCircle2, Award, Sparkles, Smartphone, Code2 } from 'lucide-react';
 
 export function AboutSection() {
   const { t, language } = useTranslation();
 
   return (
-    <section id="about" className="py-20 bg-slate-50 dark:bg-slate-900/40 relative">
+    <section id="about" className="py-20 bg-slate-50 dark:bg-[#05070D]/90 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Background"
+          badge="Engineering Matrix"
           title={t.about.sectionTitle}
           subtitle={t.about.sectionSubtitle}
         />
 
+        {/* 3 Pillar Cards: What Makes Ahmed Different? */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3 }}
+            className="p-6 rounded-2xl bg-white dark:bg-[#0B1020]/90 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 shadow-lg transition-all duration-300 backdrop-blur-md"
+          >
+            <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-4">
+              <Smartphone className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              Flutter Application Development
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Engineering cross-platform Android and Windows desktop applications with BLoC state management and Clean Architecture.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className="p-6 rounded-2xl bg-white dark:bg-[#0B1020]/90 border border-slate-200 dark:border-slate-800 hover:border-violet-500/50 shadow-lg transition-all duration-300 backdrop-blur-md"
+          >
+            <div className="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400 flex items-center justify-center mb-4">
+              <Sparkles className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              Artificial Intelligence
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Integrating PyTorch, Gemini AI APIs, ResNet-50, and EfficientNet deep learning models into production workflows.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            className="p-6 rounded-2xl bg-white dark:bg-[#0B1020]/90 border border-slate-200 dark:border-slate-800 hover:border-red-500/50 shadow-lg transition-all duration-300 backdrop-blur-md"
+          >
+            <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 flex items-center justify-center mb-4">
+              <Lock className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+              Cybersecurity &amp; Digital Forensics
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Specialized academic background in information security, multimedia forgery analysis, ELA, and SHA-256 evidence cryptography.
+            </p>
+          </motion.div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Main Story Box */}
+          {/* Main Narrative Box */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-7 p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col justify-between"
+            className="lg:col-span-7 p-8 rounded-3xl bg-white dark:bg-[#0B1020]/90 border border-slate-200 dark:border-slate-800 shadow-xl flex flex-col justify-between"
           >
             <div className="space-y-4 text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              <p className="font-medium text-slate-900 dark:text-white">
+              <p className="font-semibold text-slate-900 dark:text-white">
                 {t.about.p1}
               </p>
               <p>
@@ -41,10 +101,10 @@ export function AboutSection() {
             </div>
 
             {/* Core Highlights List */}
-            <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800/80 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {t.about.highlights.map((highlight, idx) => (
-                <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                   <span>{highlight}</span>
                 </div>
               ))}
@@ -57,18 +117,18 @@ export function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-5 p-8 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden"
+            className="lg:col-span-5 p-8 rounded-3xl bg-[#080B12] text-white border border-slate-800 shadow-2xl flex flex-col justify-between relative overflow-hidden"
           >
             {/* Ambient Corner Glow */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-red-500/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 rounded-xl bg-red-500/10 text-red-500 border border-red-500/20">
+                <div className="p-3 rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
                   <GraduationCap className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-xs font-mono text-red-400 uppercase tracking-wider block">
+                  <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest block">
                     Academic Qualification
                   </span>
                   <h3 className="text-lg font-bold text-white">
@@ -87,26 +147,33 @@ export function AboutSection() {
 
                 <div>
                   <span className="text-xs text-slate-400 block mb-0.5">Specialization</span>
-                  <p className="font-semibold text-red-400">
+                  <p className="font-semibold text-cyan-400">
                     {language === 'ar' ? educationData.specializationAr : educationData.specialization}
                   </p>
                 </div>
 
                 <div>
-                  <span className="text-xs text-slate-400 block mb-0.5">Graduation Grade</span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold text-sm">
-                    <Award className="w-4 h-4" />
+                  <span className="text-xs text-slate-400 block mb-0.5">Overall Degree Grade</span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-bold text-sm">
+                    <Award className="w-4 h-4 text-cyan-400" />
                     {language === 'ar' ? educationData.gradeAr : educationData.grade}
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-800/80">
-              <span className="text-xs text-slate-400 block mb-1">Graduation Project</span>
-              <p className="text-sm font-bold text-amber-400">
-                {language === 'ar' ? educationData.projectAr : educationData.project}
-              </p>
+            <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <div>
+                <span className="text-xs text-slate-400 block mb-1">Graduation Project</span>
+                <p className="text-sm font-bold text-amber-400">
+                  {language === 'ar' ? educationData.projectAr : educationData.project}
+                </p>
+              </div>
+
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20 shrink-0">
+                <Sparkles className="w-3 h-3" />
+                {language === 'ar' ? educationData.projectGradeAr : educationData.projectGrade}
+              </span>
             </div>
           </motion.div>
         </div>

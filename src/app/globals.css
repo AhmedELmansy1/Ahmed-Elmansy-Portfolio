@@ -39,7 +39,7 @@
   }
 }
 
-/* Scan Line Animation */
+/* Animations */
 @keyframes scanline {
   0% {
     top: 0%;
@@ -57,8 +57,39 @@
   }
 }
 
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(200%) rotate(25deg);
+  }
+}
+
 .animate-scan-line {
   animation: scanline 8s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+.animate-light-sweep {
+  animation: lightSweep 4s ease-in-out infinite;
+}
+
+/* Cyber Card Glow Utility */
+.cyber-card {
+  @apply relative rounded-2xl bg-white dark:bg-[#0B1020]/90 border border-slate-200 dark:border-slate-800/80 hover:border-cyan-500/50 transition-all duration-300 shadow-md hover:shadow-2xl hover:shadow-cyan-500/10 backdrop-blur-md overflow-hidden;
 }
 
 /* Custom Scrollbar */

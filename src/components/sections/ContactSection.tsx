@@ -6,7 +6,7 @@ import { useTranslation } from '@/hooks/useTranslation';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { personalInfo } from '@/data/socials';
 import { Button } from '@/components/ui/Button';
-import { Mail, Phone, MapPin, Github, Linkedin, Download, Send, CheckCircle2, MessageSquare, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Download, Send, CheckCircle2, MessageSquare } from 'lucide-react';
 
 export function ContactSection() {
   const { t, language } = useTranslation();
@@ -24,7 +24,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-slate-950 relative">
+    <section id="contact" className="py-20 bg-white dark:bg-[#05070D] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Get In Touch"
@@ -58,7 +58,7 @@ export function ContactSection() {
             target="_blank"
             variant="outline"
             size="md"
-            icon={<Linkedin className="w-4 h-4 text-blue-500" />}
+            icon={<Linkedin className="w-4 h-4 text-cyan-400" />}
           >
             LinkedIn
           </Button>
@@ -91,7 +91,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-5 p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl space-y-5"
+            className="lg:col-span-5 p-8 rounded-3xl bg-[#080B12] text-white border border-slate-800 shadow-2xl space-y-5"
           >
             <h3 className="text-xl font-bold text-white mb-2">
               Direct Contact Details
@@ -100,14 +100,14 @@ export function ContactSection() {
             {/* Email Item */}
             <a
               href={`mailto:${personalInfo.email}`}
-              className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-red-500/50 transition-colors group"
+              className="flex items-start gap-4 p-4 rounded-2xl bg-[#05070D] border border-slate-800 hover:border-cyan-500/50 transition-colors group"
             >
-              <div className="p-3 rounded-xl bg-red-500/10 text-red-500 border border-red-500/20 group-hover:bg-red-500 group-hover:text-white transition-colors shrink-0">
+              <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-white transition-colors shrink-0">
                 <Mail className="w-5 h-5" />
               </div>
               <div className="min-w-0">
                 <span className="text-xs text-slate-400 block font-mono">{t.contact.emailLabel}</span>
-                <span className="text-sm font-bold text-slate-100 truncate block group-hover:text-red-400 transition-colors">
+                <span className="text-sm font-bold text-slate-100 truncate block group-hover:text-cyan-400 transition-colors">
                   {personalInfo.email}
                 </span>
               </div>
@@ -118,13 +118,13 @@ export function ContactSection() {
               href={personalInfo.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-emerald-500/50 transition-colors group"
+              className="flex items-start gap-4 p-4 rounded-2xl bg-[#05070D] border border-slate-800 hover:border-emerald-500/50 transition-colors group"
             >
-              <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-white transition-colors shrink-0">
+              <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-white transition-colors shrink-0">
                 <MessageSquare className="w-5 h-5" />
               </div>
               <div>
-                <span className="text-xs text-slate-400 block font-mono">WhatsApp & Phone</span>
+                <span className="text-xs text-slate-400 block font-mono">WhatsApp &amp; Phone</span>
                 <span className="text-sm font-bold text-slate-100 block group-hover:text-emerald-400 transition-colors">
                   {personalInfo.phone}
                 </span>
@@ -136,21 +136,21 @@ export function ContactSection() {
               href={personalInfo.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-blue-500/50 transition-colors group"
+              className="flex items-start gap-4 p-4 rounded-2xl bg-[#05070D] border border-slate-800 hover:border-indigo-500/50 transition-colors group"
             >
-              <div className="p-3 rounded-xl bg-blue-500/10 text-blue-500 border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-colors shrink-0">
+              <div className="p-3 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 group-hover:bg-indigo-500 group-hover:text-white transition-colors shrink-0">
                 <Linkedin className="w-5 h-5" />
               </div>
               <div className="min-w-0">
                 <span className="text-xs text-slate-400 block font-mono">LinkedIn Profile</span>
-                <span className="text-sm font-bold text-slate-100 truncate block group-hover:text-blue-400 transition-colors">
+                <span className="text-sm font-bold text-slate-100 truncate block group-hover:text-indigo-400 transition-colors">
                   linkedin.com/in/ahmed-elmansy-a6b494346
                 </span>
               </div>
             </a>
 
             {/* Location Item */}
-            <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+            <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#05070D] border border-slate-800">
               <div className="p-3 rounded-xl bg-amber-500/10 text-amber-500 border border-amber-500/20 shrink-0">
                 <MapPin className="w-5 h-5" />
               </div>
@@ -169,7 +169,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-7 p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl"
+            className="lg:col-span-7 p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1020]/90 border border-slate-200 dark:border-slate-800 shadow-xl backdrop-blur-md"
           >
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
               {t.contact.formTitle}
@@ -204,7 +204,7 @@ export function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Your Full Name"
-                      className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 text-sm"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-[#05070D] border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm"
                     />
                   </div>
 
@@ -218,7 +218,7 @@ export function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="your.email@example.com"
-                      className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 text-sm"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-[#05070D] border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm"
                     />
                   </div>
                 </div>
@@ -233,7 +233,7 @@ export function ContactSection() {
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     placeholder="Project Inquiry / Application Development"
-                    className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 text-sm"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-[#05070D] border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm"
                   />
                 </div>
 
@@ -247,7 +247,7 @@ export function ContactSection() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell me about your project goals, scope, and timeline..."
-                    className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 text-sm resize-none"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white dark:bg-[#05070D] border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm resize-none"
                   />
                 </div>
 
