@@ -10,7 +10,7 @@ import { ProjectModal } from '@/components/ui/ProjectModal';
 import { Project } from '@/types';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { Shield, Sparkles, CheckCircle2, Lock, ArrowRight } from 'lucide-react';
+import { Shield, Sparkles, CheckCircle2, Lock, ArrowRight, Activity, Terminal, Eye } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function ProjectsSection() {
@@ -49,8 +49,8 @@ export function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-[#05070D] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-24 bg-[#030712] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="Featured Portfolio"
           title={t.projects.sectionTitle}
@@ -58,7 +58,7 @@ export function ProjectsSection() {
         />
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-14">
           {[
             { id: 'all', label: t.projects.all },
             { id: 'flutter', label: t.projects.flutter },
@@ -69,10 +69,10 @@ export function ProjectsSection() {
               key={tab.id}
               onClick={() => setFilter(tab.id as any)}
               className={cn(
-                'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer',
+                'px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer',
                 filter === tab.id
-                  ? 'bg-gradient-to-r from-[#3B82F6] to-[#2563EB] text-white shadow-lg shadow-blue-500/25 border border-blue-400'
-                  : 'bg-slate-100 dark:bg-[#0A1020] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                  ? 'bg-gradient-to-r from-[#3B82F6] via-[#2563EB] to-[#F5C542] text-white shadow-xl shadow-blue-500/20 border border-blue-400'
+                  : 'bg-[#0A1020] text-slate-300 border border-slate-800 hover:border-[#3B82F6]/50'
               )}
             >
               {tab.label}
@@ -80,54 +80,54 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* FEATURED DOMINANT SHOWCASE (Show when filter is 'all' or 'ai') */}
+        {/* FEATURED CASE STUDY SHOWCASE (AI-Powered Digital Forensics System) */}
         {(filter === 'all' || filter === 'ai') && featuredProject && (
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-14 rounded-3xl bg-[#080B14] text-white border border-[#D4AF37]/40 hover:border-[#F5C542] shadow-2xl overflow-hidden relative group transition-all duration-300"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-16 rounded-3xl bg-[#07111F] text-white border-2 border-[#D4AF37]/50 hover:border-[#F5C542] shadow-2xl overflow-hidden relative group transition-all duration-500"
           >
             {/* Top Ambient Gold/Blue Light */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="p-8 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div className="p-8 sm:p-12 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
 
-              <div className="lg:col-span-7 space-y-5">
+              <div className="lg:col-span-7 space-y-6">
                 {/* Header Pills */}
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-gradient-to-r from-[#F5C542] via-[#3B82F6] to-[#EF4444] text-white shadow-md">
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-gradient-to-r from-[#F5C542] via-[#3B82F6] to-[#EF4444] text-white shadow-lg">
                     <Sparkles className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '4s' }} />
                     {t.projects.featuredBadge}
                   </span>
-                  <Badge variant="gold" size="sm" icon={<Shield className="w-3 h-3" />}>
+                  <Badge variant="gold" size="sm" icon={<Shield className="w-3.5 h-3.5 text-[#F5C542]" />}>
                     AI • Digital Forensics • Cybersecurity
                   </Badge>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight">
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">
                   <span className="text-[#F5C542]">{language === 'ar' ? featuredProject.titleAr : featuredProject.title}</span>
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
+                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
                   {language === 'ar' ? featuredProject.descriptionAr : featuredProject.description}
                 </p>
 
                 {/* Core Forensic Capabilities Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2">
                   {forensicCaps.map((cap, i) => (
-                    <div key={i} className="flex items-center gap-2 p-2 rounded-lg bg-[#05070D] border border-slate-800 text-xs font-mono text-slate-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#EF4444] shrink-0" />
+                    <div key={i} className="flex items-center gap-2 p-2.5 rounded-xl bg-[#030712] border border-slate-800 text-xs font-mono text-slate-200">
+                      <CheckCircle2 className="w-4 h-4 text-[#EF4444] shrink-0" />
                       <span className="truncate">{cap}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Tech Tags */}
-                <div className="flex flex-wrap gap-1.5 pt-2">
+                <div className="flex flex-wrap gap-2 pt-2">
                   {featuredProject.technologies.slice(0, 8).map((tech, idx) => (
                     <Badge key={idx} variant="slate" size="sm">
                       {tech}
@@ -149,36 +149,36 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              {/* Graphic Feature Panel */}
+              {/* Graphic Feature Terminal Panel */}
               <div className="lg:col-span-5 flex flex-col justify-center">
-                <div className="p-6 rounded-2xl bg-[#05070D] border border-slate-800 space-y-4 font-mono text-xs text-slate-300 shadow-xl">
+                <div className="p-6 rounded-3xl bg-[#030712] border border-slate-800 space-y-4 font-mono text-xs text-slate-300 shadow-2xl">
                   <div className="flex items-center justify-between pb-3 border-b border-slate-800 text-slate-400">
                     <span className="flex items-center gap-2">
                       <Lock className="w-4 h-4 text-[#EF4444]" />
-                      <span className="text-[#F5C542]">FORENSIC PIPELINE</span>
+                      <span className="text-[#F5C542] font-bold">FORENSIC PIPELINE</span>
                     </span>
-                    <span className="text-[10px] text-emerald-400">ACTIVE ANALYSIS</span>
+                    <span className="text-[10px] text-emerald-400 font-bold">ACTIVE ANALYSIS</span>
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="p-2.5 rounded bg-[#080B14] border border-slate-800/80 flex items-center justify-between">
-                      <span>Image Analysis (ELA)</span>
-                      <span className="text-[#F5C542]">ResNet-50 / EfficientNet</span>
+                  <div className="space-y-2.5">
+                    <div className="p-3 rounded-xl bg-[#07111F] border border-slate-800 flex items-center justify-between">
+                      <span className="text-slate-300">Image Analysis (ELA)</span>
+                      <span className="text-[#F5C542] font-bold">ResNet-50 / EfficientNet</span>
                     </div>
 
-                    <div className="p-2.5 rounded bg-[#080B14] border border-slate-800/80 flex items-center justify-between">
-                      <span>Audio Deepfake</span>
-                      <span className="text-[#3B82F6]">AASIST / XLS-R</span>
+                    <div className="p-3 rounded-xl bg-[#07111F] border border-slate-800 flex items-center justify-between">
+                      <span className="text-slate-300">Audio Deepfake</span>
+                      <span className="text-[#3B82F6] font-bold">AASIST / XLS-R</span>
                     </div>
 
-                    <div className="p-2.5 rounded bg-[#080B14] border border-slate-800/80 flex items-center justify-between">
-                      <span>Explainable AI</span>
-                      <span className="text-[#EF4444]">Grad-CAM Heatmaps</span>
+                    <div className="p-3 rounded-xl bg-[#07111F] border border-slate-800 flex items-center justify-between">
+                      <span className="text-slate-300">Explainable AI</span>
+                      <span className="text-[#EF4444] font-bold">Grad-CAM Heatmaps</span>
                     </div>
 
-                    <div className="p-2.5 rounded bg-[#080B14] border border-slate-800/80 flex items-center justify-between">
-                      <span>Evidence Cryptography</span>
-                      <span className="text-emerald-400">SHA-256 Hashing</span>
+                    <div className="p-3 rounded-xl bg-[#07111F] border border-slate-800 flex items-center justify-between">
+                      <span className="text-slate-300">Evidence Cryptography</span>
+                      <span className="text-emerald-400 font-bold">SHA-256 Hashing</span>
                     </div>
                   </div>
                 </div>
@@ -188,7 +188,7 @@ export function ProjectsSection() {
           </motion.div>
         )}
 
-        {/* Grid for Other / Filtered Projects */}
+        {/* Grid for Other Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {gridProjects.map((project) => (
             <ProjectCard
