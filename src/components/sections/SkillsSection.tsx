@@ -10,10 +10,10 @@ export function SkillsSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-slate-950 relative">
+    <section id="skills" className="py-20 bg-[#030712] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Expertise"
+          badge="Capabilities System"
           title={t.skills.sectionTitle}
           subtitle={t.skills.sectionSubtitle}
         />

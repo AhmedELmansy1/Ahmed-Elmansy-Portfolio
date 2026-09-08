@@ -7,7 +7,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { personalInfo } from '@/data/socials';
 import { projectsData } from '@/data/projects';
 import { Button } from '@/components/ui/Button';
-import { Github, Star, GitFork, ExternalLink, Code2, FolderGit2 } from 'lucide-react';
+import { Github, ExternalLink, FolderGit2 } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 
 export function GithubSection() {
@@ -16,10 +16,10 @@ export function GithubSection() {
   const githubProjects = projectsData.filter((p) => p.githubUrl);
 
   return (
-    <section id="github" className="py-20 bg-slate-50 dark:bg-slate-900/40 relative">
+    <section id="github" className="py-20 bg-[#050816] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Open Source"
+          badge="Open Source Matrix"
           title={t.github.sectionTitle}
           subtitle={t.github.sectionSubtitle}
         />
@@ -30,12 +30,12 @@ export function GithubSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="p-8 rounded-3xl bg-slate-950 text-white border border-slate-800 shadow-xl mb-12 flex flex-col md:flex-row items-center justify-between gap-6"
+          className="p-8 rounded-3xl bg-[#080B14] text-white border border-slate-800 shadow-2xl mb-12 flex flex-col md:flex-row items-center justify-between gap-6"
         >
           <div className="flex items-center gap-5">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-600 to-amber-500 p-0.5 shrink-0">
-              <div className="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center">
-                <Github className="w-8 h-8 text-white" />
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#F5C542] via-[#3B82F6] to-[#EF4444] p-0.5 shrink-0 shadow-lg shadow-blue-500/20">
+              <div className="w-full h-full bg-[#030712] rounded-[14px] flex items-center justify-center">
+                <Github className="w-8 h-8 text-[#F5C542]" />
               </div>
             </div>
 
@@ -44,11 +44,11 @@ export function GithubSection() {
                 <h3 className="text-xl font-bold text-white">
                   {personalInfo.githubUsername}
                 </h3>
-                <Badge variant="red" size="sm">
+                <Badge variant="gold" size="sm">
                   Developer
                 </Badge>
               </div>
-              <p className="text-xs font-mono text-slate-400 mt-1">
+              <p className="text-xs font-mono text-[#3B82F6] mt-1">
                 Flutter • Python • Cybersecurity
               </p>
             </div>
@@ -75,15 +75,15 @@ export function GithubSection() {
               viewport={{ once: true }}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.3 }}
-              className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-red-500/40 shadow-md transition-all duration-300 flex flex-col justify-between"
+              className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#0A1020] border border-slate-200 dark:border-slate-800 hover:border-[#3B82F6]/50 shadow-lg transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
                   <div className="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-base">
-                    <FolderGit2 className="w-5 h-5 text-red-500" />
+                    <FolderGit2 className="w-5 h-5 text-[#3B82F6]" />
                     <span>{project.title}</span>
                   </div>
-                  <Badge variant="slate" size="sm">
+                  <Badge variant="cyan" size="sm">
                     Public
                   </Badge>
                 </div>
@@ -111,7 +111,7 @@ export function GithubSection() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 dark:text-red-400 hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#3B82F6] hover:text-[#60A5FA] hover:underline"
                   >
                     <span>View Repository</span>
                     <ExternalLink className="w-3.5 h-3.5" />

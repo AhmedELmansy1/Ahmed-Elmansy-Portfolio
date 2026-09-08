@@ -10,7 +10,7 @@ export function CertificationsSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="certifications" className="py-20 bg-slate-50 dark:bg-slate-900/40 relative">
+    <section id="certifications" className="py-20 bg-[#050816] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Verified Credentials"

@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --background: #F8FAFC;
-    --foreground: #0F172A;
-    --card: #FFFFFF;
-    --card-foreground: #0F172A;
-    --border: #E2E8F0;
+    --background: #05070D;
+    --foreground: #F8FAFC;
+    --card: #0A1020;
+    --card-foreground: #F8FAFC;
+    --border: #1E293B;
   }
 
   .dark {
@@ -27,10 +27,14 @@
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    background-color: #030712;
+    color: #F8FAFC;
   }
 
   body {
     @apply bg-background text-foreground transition-colors duration-300 min-h-screen overflow-x-hidden selection:bg-[#F5C542]/30 selection:text-[#F5C542];
+    background-color: #030712;
+    color: #F8FAFC;
   }
 
   /* Accessible Focus Indicator */
@@ -98,7 +102,7 @@
 
 /* Depth Cyber Card Utility */
 .depth-card {
-  @apply relative rounded-3xl bg-white dark:bg-[#0A1020] border border-slate-200 dark:border-[#1E293B] hover:border-[#3B82F6]/50 transition-all duration-300 shadow-md hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden;
+  @apply relative rounded-3xl bg-[#0A1020] border border-[#1E293B] hover:border-[#3B82F6]/50 transition-all duration-300 shadow-md hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden;
 }
 
 /* Custom Scrollbar */
